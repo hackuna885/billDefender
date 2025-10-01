@@ -4,7 +4,7 @@ import glob
 def replace_in_htaccess():
     """
     Busca todos los archivos .htaccess en el directorio actual y subdirectorios
-    Reemplaza /edfman/ por /billDefender/
+    Reemplaza /billDefender/ por /edfman/
     """
     # Buscar todos los archivos .htaccess recursivamente desde el directorio actual
     htaccess_files = glob.glob("**/.htaccess", recursive=True)
@@ -24,9 +24,9 @@ def replace_in_htaccess():
                 content = file.read()
             
             # Verificar si contiene el texto a reemplazar
-            if "/edfman/" in content:
+            if "/billDefender/" in content:
                 # Hacer el reemplazo
-                new_content = content.replace("/edfman/", "/billDefender/")
+                new_content = content.replace("/billDefender/", "/edfman/")
                 
                 # Escribir el archivo modificado
                 with open(file_path, 'w', encoding='utf-8') as file:

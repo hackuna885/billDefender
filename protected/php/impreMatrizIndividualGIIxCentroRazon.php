@@ -139,6 +139,7 @@ date_default_timezone_set('America/Mexico_City');
 			
 			$con = new SQLite3("../data/nom035.db") or die("Problemas para conectar!");
 
+			// $csE = $con -> query("SELECT * FROM matrizIndividualGII WHERE Empresad = '$_GET[empresa]'");
 			$csE = $con -> query("SELECT * FROM matrizIndividualGII WHERE Empresad = '$_GET[empresa]' AND carpetaPrincipal = '$_GET[centroTrab]' AND carpetaSecundaria = '$_GET[razon]'");
 			while ($dato = $csE->fetchArray()) {
 				$empresad = $dato['Empresad'];
